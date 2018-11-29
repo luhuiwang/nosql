@@ -44,7 +44,11 @@ docker exec -it hbase /bin/bash -c 'hbase shell'
 ## 6. Neo4j
 ```
 docker exec -it neo4j /bin/bash -c 'cypher-shell -u neo4j -p neo4j'
-# or browse to http://localhost:7474 
+
+# or if NEO4J_AUTH=none is set, then
+docker exec -it neo4j /bin/bash -c cypher-shell
+
+# You can also browse to http://localhost:7474 or http://host-ip:7474, and remember to modify the bolt address.
 ```
 
 ## 7. End
