@@ -68,6 +68,9 @@ docker exec -it neo4j //bin/bash -c cypher-shell
 
 ## 7. End
 ```
+docker-compose -f docker-compose.yml down
+
+# Or use the commands bellow:
 docker-compose -f docker-compose.yml stop
 docker-compose rm
 ```
