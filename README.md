@@ -22,16 +22,25 @@ docker-compose -f docker-compose.yml up -d
 ## 2. Redis
 ```
 docker exec -it redis /bin/bash -c redis-cli
+
+# Or use the command to avoid problems while using "git for windows"
+docker exec -it redis //bin/bash -c redis-cli
 ```
 
 ## 3. MongoDB
 ```
 docker exec -it mongo /bin/bash -c mongo
+
+# Or use the command to avoid problems while using "git for windows"
+docker exec -it mongo //bin/bash -c mongo
 ```
 
 ## 4. Cassandra
 ```
 docker exec -it cassandra /bin/bash -c cqlsh
+
+# Or use the command to avoid problems while using "git for windows"
+docker exec -it cassandra //bin/bash -c cqlsh
 ```
 
 ## 5. HBase
@@ -39,6 +48,9 @@ docker exec -it cassandra /bin/bash -c cqlsh
 # The HBase stack is from https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=70256303.
 # Or, you can refer to  another HBase stack  https://github.com/big-data-europe/docker-hbase.
 docker exec -it hbase /bin/bash -c 'hbase shell'
+
+# Or use the command to avoid problems while using "git for windows"
+docker exec -it hbase //bin/bash -c 'hbase shell'
 ```
 
 ## 6. Neo4j
@@ -47,6 +59,9 @@ docker exec -it neo4j /bin/bash -c 'cypher-shell -u neo4j -p neo4j'
 
 # or if NEO4J_AUTH=none is set, then
 docker exec -it neo4j /bin/bash -c cypher-shell
+
+# Or use the command to avoid problems while using "git for windows"
+docker exec -it neo4j //bin/bash -c cypher-shell
 
 # You can also browse to http://localhost:7474 or http://host-ip:7474, and remember to modify the bolt address.
 ```
