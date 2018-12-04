@@ -132,7 +132,7 @@ del big_data_book
 ```
 setbit bit_sets 7 1
 get bit_sets
-getbit bit_set 7
+getbit bit_sets 7
 ```
 
 7. HyperLogLog
@@ -152,7 +152,7 @@ pfcount data
 # a.
 subscribe chatroom
 publish chatroom "Is there anybody?"
-publish chatroom "Nobody? Okay, Maybe I should try another."
+publish chatroom "Nobody? Okay, maybe I should try another."
 
 # b.
 subscribe chatroom
@@ -177,8 +177,7 @@ db.students.count()
 
 ### Cassandra
 ```
-CREATE KEYSPACE books
-WITH REPLICATION={'class':'SimpleStrategy','replication_factor':3};
+CREATE KEYSPACE books WITH REPLICATION={'class':'SimpleStrategy','replication_factor':3};
 
 USE books;
 
@@ -194,19 +193,19 @@ CREATE TABLE authors(
   PRIMARY KEY (name));
 
 ALTER TABLE authors ADD picture blob;
-ALTER TABLER authors DROP gender;
+ALTER TABLE authors DROP gender;
 # DROP TABLE authors;
-
-SELECT * FROM authors LIMIT 10;
-
-SELECT * FROM authors
-where NAME= 'XIAOMING';
 
 INSERT INTO authors(name)
 VALUES ('XIAOHONG');
 
+SELECT * FROM authors LIMIT 10;
+
 UPDATE authors SET born = 1992
 WHERE name='XIAOMING';
+
+SELECT * FROM authors
+where NAME= 'XIAOMING';
 
 UPDATE authors SET genre = genre +{'Math'} where name='XIAOMING';
 
@@ -222,13 +221,13 @@ CREATE TABLE books(
 );
 
 INSERT INTO books(author,title) VALUES('XIAOMING','1+1');
-SELECT * FROM books WHERE author='XIAOMING'
+SELECT * FROM books WHERE author='XIAOMING';
 
 UPDATE books SET born=1992 WHERE author='XIAOMING';
-SELECT * FROM books WHERE author='XIAOMING'
+SELECT * FROM books WHERE author='XIAOMING';
 
 INSERT INTO books(author,title,published) VALUES ('XIAOMING','Computer Science 101', 2017);
-SELECT * FROM books WHERE author='XIAOMING'
+SELECT * FROM books WHERE author='XIAOMING';
 ```
 
 ### HBase
